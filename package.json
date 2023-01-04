@@ -1,0 +1,6 @@
+{
+  "name": "morioka-personal-dataform",
+  "dependencies": {
+    "@dataform/core": "2.0.1"
+  }
+}
