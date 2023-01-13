@@ -6,5 +6,6 @@ config { type: "view" }
 SELECT 
     num,
     str,
+    CAST(str AS INT64) as str_to_num
 from 
     ${ref("first_view")}
