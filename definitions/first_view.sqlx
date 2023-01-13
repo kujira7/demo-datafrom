@@ -1,5 +1,8 @@
 config {
   type: "view",
+  assertions: {
+    uniqueKey: ["num"],
+	}
 }
 
 SELECT 1 as num, 'foo' as str, DATE('2023-01-23') as date
