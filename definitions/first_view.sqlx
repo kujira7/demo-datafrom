@@ -1,18 +1,7 @@
--- This is an example SQLX file to help you learn the basics of Dataform.
--- Visit https://cloud.google.com/dataform/docs/how-to for more information on how to configure your SQL workflow.
-
--- You can delete this file, then commit and push your changes to your repository when you are ready.
-
--- Config blocks allow you to configure, document, and test your data assets.
 config {
-  type: "view", // Creates a view in BigQuery. Try changing to "table" instead.
-  columns: {
-    num: "A description for the test column", // Column descriptions are pushed to BigQuery.
-  }
+  type: "view",
 }
 
--- The rest of a SQLX file contains your SELECT statement used to create the table.
-
-SELECT 1 as num, 'foo' as str
+SELECT 1 as num, 'foo' as str, DATE('2023-01-23') as date
 union all 
-SELECT 2, null
+SELECT 2, 'bazz', DATE('2023-01-24')
