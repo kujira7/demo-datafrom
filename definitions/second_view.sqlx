@@ -4,7 +4,7 @@ config {
 
 SELECT 
     num,
-    str + 1,
+    str,
 from 
     ${ref("first_view")}
 

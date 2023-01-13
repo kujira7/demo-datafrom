@@ -1,11 +1,7 @@
 {
-  "defaultSchema": "dataform_t",
+  "defaultSchema": "dataform",
   "assertionSchema": "dataform_assertions",
   "warehouse": "bigquery",
   "defaultDatabase": "morioka-personal",
-  "defaultLocation": "asia-northeast1",
-  "gitCommitish": "dev-workspace",
-  "codeCompilationConfig": {
-    "schemaSuffix": "_stg"
-  }
+  "defaultLocation": "asia-northeast1"
 }
