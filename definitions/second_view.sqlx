@@ -5,7 +5,7 @@ config {
 SELECT 
     num,
     str,
-    date
+    date,
 from 
     ${ref("first_view")}
 
