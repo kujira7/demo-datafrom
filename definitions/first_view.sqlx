@@ -7,10 +7,12 @@
 config {
   type: "view", // Creates a view in BigQuery. Try changing to "table" instead.
   columns: {
-    test: "A description for the test column", // Column descriptions are pushed to BigQuery.
+    num: "A description for the test column", // Column descriptions are pushed to BigQuery.
   }
 }
 
 -- The rest of a SQLX file contains your SELECT statement used to create the table.
 
-SELECT 1121 as test
+SELECT 1 as num, 'foo' as str
+union all 
+SELECT 2, null
