@@ -4,6 +4,6 @@ config {
 
 SELECT 
     1 as one,
-    * 
+    *,
 FROM 
     `morioka-personal.demo.demo1` 
