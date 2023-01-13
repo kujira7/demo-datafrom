@@ -7,5 +7,6 @@ SELECT
     test,
     test as test2,
     right(test,2),
+    sdfdsa
 from 
     ${ref("first_view")}
