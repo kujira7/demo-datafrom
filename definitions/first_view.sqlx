@@ -8,3 +8,5 @@ config {
 SELECT 1 as num, 'foo' as str, DATE('2023-01-23') as date
 union all 
 SELECT 2, 'bazz', DATE('2023-01-24')
+union all 
+SELECT 2, 'bazz', DATE('2023-01-24')
