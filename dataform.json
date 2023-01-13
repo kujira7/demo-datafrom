@@ -1,5 +1,5 @@
 {
-  "defaultSchema": "dataform",
+  "defaultSchema": "dataform_t",
   "assertionSchema": "dataform_assertions",
   "warehouse": "bigquery",
   "defaultDatabase": "morioka-personal",
@@ -9,4 +9,3 @@
     "schemaSuffix": "_stg"
   }
 }
-    
