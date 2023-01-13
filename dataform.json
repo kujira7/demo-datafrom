@@ -3,6 +3,10 @@
   "assertionSchema": "dataform_assertions",
   "warehouse": "bigquery",
   "defaultDatabase": "morioka-personal",
-  "defaultLocation": "asia-northeast1"
+  "defaultLocation": "asia-northeast1",
+  "gitCommitish": "dev-workspace",
+  "codeCompilationConfig": {
+    "schemaSuffix": "_stg"
+  }
 }
     
