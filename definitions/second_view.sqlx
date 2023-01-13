@@ -6,6 +6,6 @@ config { type: "view" }
 SELECT 
     test,
     test as test2,
-    left(test,2)
+    right(test,2),
 from 
     ${ref("first_view")}
