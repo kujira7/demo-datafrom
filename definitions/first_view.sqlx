@@ -5,6 +5,7 @@ config {
 	}
 }
 
-SELECT 1 as num, 'foo' as str, DATE('2023-01-23') as date
+SELECT 1 as num, 'foo' as str
 union all 
-SELECT 2, 'bazz', DATE('2023-01-24')
+SELECT 2, 'bazz'
+
