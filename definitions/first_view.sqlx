@@ -8,6 +8,3 @@ config {
 SELECT 1 as num, 'foo' as str
 union all 
 SELECT 2, 'bazz'
-union all 
-SELECT 3, 'bazz'
-
