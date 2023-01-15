@@ -30,7 +30,5 @@ jobs:
         uses: "google-github-actions/setup-gcloud@v1"
 
       - name: 'Use gcloud CLI'
-        run: |-
-          gcloud workflows run workflow-1 \
-            --project=morioka-personal 
+        run: 'gcloud auth list --filter=status:ACTIVE --format="value(account)"'
           
