@@ -33,5 +33,5 @@ jobs:
         run: |-
           gcloud workflows run workflow-2 \
             --project=morioka-personal \
-            --data={"gitCommitish": "main"}
+            --data={"gitCommitish": "main"} 
           
