@@ -7,4 +7,4 @@ config {
 
 SELECT 1 as num, 'foo' as str
 union all 
-SELECT 1, 'bazz'
+SELECT 2, 'bazz'
