@@ -32,5 +32,5 @@ jobs:
       - name: 'Use gcloud CLI'
         run: |-
           gcloud workflows run workflow-2 \
-            --data={"gitCommitish":"main"}
+            --data="{'gitCommitish':'main'}"
           
