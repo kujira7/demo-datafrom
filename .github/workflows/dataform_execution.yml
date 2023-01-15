@@ -14,6 +14,9 @@ jobs:
       contents: read
 
     runs-on: ubuntu-latest
+    
+    outputs:
+      workflowsResult: ${{ steps.runWorkflows.outputs }}
 
     steps:
       - uses: actions/checkout@v2
@@ -30,8 +33,11 @@ jobs:
         uses: 'google-github-actions/setup-gcloud@v1'
 
       - name: 'Run workflows'
-        id: workflowsResult
+        id: 'runWorkflows'
         run: |-
           gcloud workflows run workflow-2 \
-            --data='{"gitCommitish":"${{github.head_ref}}"}'
+            --data='{"gitCommitish":"${{github.head_ref}}"}'\
+            --format "value(state)" >> $GITHUB_OUTPUT
+      - name: 'echo'
+        run: echo ${{needs.build.outputs.workflowsResult} 
       
