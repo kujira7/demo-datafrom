@@ -31,7 +31,8 @@ jobs:
 
       - name: 'Use gcloud CLI'
         run: |-
-          gcloud workflows run workflow-1 \
+          gcloud workflows run workflow-2 \
             --project=morioka-personal \
-            --region=us-central1
+            --region=us-central1 \
+            -data="{'gitCommitish': 'main'}"
           
