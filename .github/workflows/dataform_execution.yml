@@ -7,22 +7,27 @@ on:
   workflow_dispatch:
 
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
+    # Allow the job to fetch a GitHub ID token
+    permissions:
+      id-token: write
+      contents: read
+
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v0.3.1'
+        with:
+          create_credentials_file: true
+          workload_identity_provider: 'projects/886273328813/locations/global/workloadIdentityPools/workload-identity-pool-id/providers/github-actions"'
+          service_account: 'test-sc@morioka-personal.iam.gserviceaccount.com'
+      
+      - name: 'Set up Cloud SDK'
+        uses: "google-github-actions/setup-gcloud@v0"
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: 'Use gcloud CLI'
+        run: 'gcloud workflows run workflow-2 --data="{\"gitCommitish\": \"dev-workspace\"}"'
