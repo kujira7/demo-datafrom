@@ -30,4 +30,4 @@ jobs:
         uses: "google-github-actions/setup-gcloud@v0"
 
       - name: 'Use gcloud CLI'
-        run: 'gcloud workflows run workflow-2 --data="{\"gitCommitish\": \"dev-workspace\"}"'
+        run: 'gcloud workflows run workflow-1'
