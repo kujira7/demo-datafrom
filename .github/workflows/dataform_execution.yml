@@ -12,9 +12,10 @@ jobs:
     permissions:
       id-token: write
       contents: read
-
+    
     runs-on: ubuntu-latest
     
+    # Map a step output to a job output
     outputs:
       workflowsResult: ${{ steps.runWorkflows.outputs }}
 
