@@ -33,5 +33,6 @@ jobs:
         run: |-
           gcloud workflows run workflow-1 \
             --project=morioka-personal 
+            --region='us-central1'
             --service-account=test-sc@morioka-personal.iam.gserviceaccount.com
           
