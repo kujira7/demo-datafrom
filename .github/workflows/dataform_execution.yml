@@ -34,6 +34,7 @@ jobs:
         run: |-
           gcloud workflows run workflow-2 \
             --data='{"gitCommitish":"${{github.head_ref}}"}'
+      
       - name: 'check status'
         run: echo "${{workflowsResult}}"
           
