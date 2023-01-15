@@ -39,6 +39,8 @@ jobs:
           gcloud workflows run workflow-2 \
             --data='{"gitCommitish":"${{github.head_ref}}"}'\
             --format "value(state)" >> $GITHUB_OUTPUT
+      
       - name: 'echo'
-        run: echo ${{needs.build.outputs.workflowsResult} 
+        run: |-
+          echo ${{needs.build.outputs.workflowsResult}}
       
