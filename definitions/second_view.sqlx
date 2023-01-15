@@ -1,10 +1,10 @@
 config { 
-    type: "view" 
+  type: "view" 
 }
 
 SELECT 
-    num,
-    str + 1,
+  num,
+  str,
 from 
-    ${ref("first_view")}
+  ${ref("first_view")}
 
