@@ -32,8 +32,12 @@ jobs:
       - name: 'Run workflows'
         id: 'runWorkflows'
         run: |
-          state=$(gcloud workflows run workflow-2 \
+          STATE=$(gcloud workflows run workflow-2 \
             --data='{"gitCommitish":"${{github.head_ref}}"}'\
             --format "value(state)")
-          echo $state
+          if [ "$STATE" = "SUCCEEDED" ]; then
+            echo $STATE
+          else
+            exit 1
+          fi
       
