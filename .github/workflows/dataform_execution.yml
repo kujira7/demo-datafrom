@@ -14,10 +14,6 @@ jobs:
       contents: read
     
     runs-on: ubuntu-latest
-    
-    # Map a step output to a job output
-    outputs:
-      workflowsResult: ${{ steps.runWorkflows.outputs }}
 
     steps:
       - uses: actions/checkout@v2
@@ -35,12 +31,9 @@ jobs:
 
       - name: 'Run workflows'
         id: 'runWorkflows'
-        run: |-
-          gcloud workflows run workflow-2 \
+        run: |
+          state=$(gcloud workflows run workflow-2 \
             --data='{"gitCommitish":"${{github.head_ref}}"}'\
-            --format "value(state)" >> $GITHUB_OUTPUT
-      
-      - name: 'echo'
-        run: |-
-          echo ${{needs.build.outputs.workflowsResult}}
+            --format "value(state)")
+          echo $state
       
