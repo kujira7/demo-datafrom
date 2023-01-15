@@ -29,8 +29,11 @@ jobs:
       - name: 'Set up Cloud SDK'
         uses: 'google-github-actions/setup-gcloud@v1'
 
-      - name: 'Use gcloud CLI'
+      - name: 'Run workflows'
+        id: workflowsResult
         run: |-
           gcloud workflows run workflow-2 \
-            --data='{"gitCommitish":"main"}'
+            --data='{"gitCommitish":"${{github.head_ref}}"}'
+      - name: 'check status'
+        run: echo "${{workflowsResult}}"
           
